@@ -18,6 +18,6 @@ class Flocker < Formula
   end
 
   test do
-    system "#{bin}/flocker-changestate", "--version"
+    system "#{bin}/flocker-deploy", "--version"
   end
 end
