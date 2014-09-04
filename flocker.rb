@@ -2,8 +2,8 @@ require "formula"
 
 class Flocker < Formula
   homepage "https://clusterhq.com"
-  url "https://github.com/ClusterHQ/flocker/archive/0.1.0.tar.gz"
-  sha1 "59f61aa85b44981fc3ea8ddb132628b9ee27d02e"
+  url "https://storage.googleapis.com/archive.clusterhq.com/downloads/flocker/Flocker-0.1.1pre1.tar.gz"
+  sha1 ""
 
   depends_on :python if MacOS.version <= :snow_leopard
 
