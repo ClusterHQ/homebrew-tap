@@ -4,6 +4,11 @@ class Flocker < Formula
   homepage "https://clusterhq.com"
 
   stable do
+    url "https://storage.googleapis.com/archive.clusterhq.com/downloads/flocker/Flocker-0.1.0.tar.gz"
+    sha1 "59f61aa85b44981fc3ea8ddb132628b9ee27d02e"
+  end
+
+  devel do
     url "https://storage.googleapis.com/archive.clusterhq.com/downloads/flocker/Flocker-0.1.1.tar.gz"
     sha1 "fefe853683c717660d7437fa78ab85b032875c38"
   end
