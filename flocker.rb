@@ -16,7 +16,7 @@ class Flocker < Formula
     sha1 "fefe853683c717660d7437fa78ab85b032875c38"
   end
 
-  # Installed with ``brew install --head``
+  # Installed with ``brew install --HEAD``
   # Installs the master branch directly from GitHub.
   head do
     url "https://github.com/ClusterHQ/flocker.git"
