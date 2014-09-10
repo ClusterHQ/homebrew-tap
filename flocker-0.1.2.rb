@@ -1,6 +1,6 @@
 require "formula"
 
-class Flocker < Formula
+class Flocker012 < Formula
   homepage "https://clusterhq.com"
   url "http://storage.googleapis.com/archive.clusterhq.com/downloads/flocker/Flocker-0.1.2.tar.gz"
   sha1 "c74fc9f00bbeea6f0cd357ac79c294700c26b5a7"
