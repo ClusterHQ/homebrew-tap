@@ -2,7 +2,7 @@ require "formula"
 
 class Flocker014 < Formula
   homepage "https://clusterhq.com"
-  url "http://storage.googleapis.com/archive.clusterhq.com/downloads/flocker/Flocker-0.1.4.tar.gz"
+  url "https://storage.googleapis.com/archive.clusterhq.com/downloads/flocker/Flocker-0.1.4.tar.gz"
   sha1 "64bf0003e9841c364dc7fa73eb63f73b5042c1ba"
   depends_on :python if MacOS.version <= :snow_leopard
 
