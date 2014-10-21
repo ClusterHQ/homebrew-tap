@@ -3,7 +3,7 @@ require "formula"
 class Flocker030 < Formula
   homepage "https://clusterhq.com"
   url "http://storage.googleapis.com/archive.clusterhq.com/downloads/flocker/Flocker-0.3.0.tar.gz"
-  sha1 "TODO"
+  sha1 "81c5fc86cde990db0947fcc421b0ed9e85b7b46c"
   depends_on :python if MacOS.version <= :snow_leopard
 
   def install
