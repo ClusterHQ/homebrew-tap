@@ -1,9 +1,9 @@
 require "formula"
 
-class Flocker030 < Formula
+class Flocker031 < Formula
   homepage "https://clusterhq.com"
-  url "http://storage.googleapis.com/archive.clusterhq.com/downloads/flocker/Flocker-0.3.0.tar.gz"
-  sha1 "81c5fc86cde990db0947fcc421b0ed9e85b7b46c"
+  url "http://storage.googleapis.com/archive.clusterhq.com/downloads/flocker/Flocker-0.3.1.tar.gz"
+  sha1 "9f4a9d4eda2c191eee6ba4d7e6cd09a42cbf77eb"
   depends_on :python if MacOS.version <= :snow_leopard
 
   def install
