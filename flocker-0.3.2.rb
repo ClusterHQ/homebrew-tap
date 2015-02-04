@@ -27,8 +27,8 @@ class Flocker032 < Formula
   end
 
   resource "ipaddr" do
-    url "https://pypi.python.org/packages/source/i/ipaddr/ipaddr-2.1.11.tar.gz"
-    sha1 "f9a16ddb3cf774b8dcf8894c2f4295c4e17d0ed3"
+    url "https://ipaddr-py.googlecode.com/files/ipaddr-2.1.10.tar.gz"
+    sha1 "c608450b077b19773d4f1b5f1ef88b26f6650ce0"
   end
 
   resource "jsonschema" do
