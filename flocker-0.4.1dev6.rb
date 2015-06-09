@@ -1,9 +1,9 @@
 require "formula"
 
-class Flocker041dev1 < Formula
+class Flocker041dev6 < Formula
   homepage "https://clusterhq.com"
-  url "https://clusterhq-archive.s3.amazonaws.com/python/Flocker-0.4.1dev1.tar.gz"
-  sha1 "6a8f439555af61b9d28d7fffbc93ce7db341bc60"
+  url "https://clusterhq-archive.s3.amazonaws.com/python/Flocker-0.4.1dev6.tar.gz"
+  sha1 "15999ac8abef1d99ea2a52a47cabe28f5e2a4256"
   depends_on :python if MacOS.version <= :snow_leopard
 
   resource "argparse" do
@@ -32,8 +32,8 @@ class Flocker041dev1 < Formula
   end
 
   resource "cffi" do
-    url "https://pypi.python.org/packages/source/c/cffi/cffi-1.0.2-2.tar.gz"
-    sha1 "933073c94bd68015ea08082804cf8e5cfe538ec1"
+    url "https://pypi.python.org/packages/source/c/cffi/cffi-1.1.1.tar.gz"
+    sha1 "8c4f4d1078d05c796c12fc6d8f8cea25aaff0148"
   end
 
   resource "characteristic" do
@@ -42,8 +42,13 @@ class Flocker041dev1 < Formula
   end
 
   resource "cryptography" do
-    url "https://pypi.python.org/packages/source/c/cryptography/cryptography-0.9.tar.gz"
-    sha1 "f11db888d32a25d74ef960e47bed8119c0afd1b8"
+    url "https://pypi.python.org/packages/source/c/cryptography/cryptography-0.9.1.tar.gz"
+    sha1 "347f10518c61b44126eda5ce9650b34010750fcf"
+  end
+
+  resource "debtcollector" do
+    url "https://pypi.python.org/packages/source/d/debtcollector/debtcollector-0.5.0.tar.gz"
+    sha1 "05c6f907397434ecea904de0f9c7dff9d677cbfc"
   end
 
   resource "docker-py" do
@@ -117,23 +122,23 @@ class Flocker041dev1 < Formula
   end
 
   resource "oslo.config" do
-    url "https://pypi.python.org/packages/source/o/oslo.config/oslo.config-1.11.0.tar.gz"
-    sha1 "ce5f1056c0e3147e171bff0c0944dda7c156cabc"
+    url "https://pypi.python.org/packages/source/o/oslo.config/oslo.config-1.12.0.tar.gz"
+    sha1 "c9916a29c9329ca1020302627b6bf1b66efd02be"
   end
 
   resource "oslo.i18n" do
-    url "https://pypi.python.org/packages/source/o/oslo.i18n/oslo.i18n-1.6.0.tar.gz"
-    sha1 "ad2f5a015ced7f338f16b60b4d5d6b6ff5fca18a"
+    url "https://pypi.python.org/packages/source/o/oslo.i18n/oslo.i18n-1.7.0.tar.gz"
+    sha1 "62191790e7caaae7cbad325adce33b44e2f1cc40"
   end
 
   resource "oslo.serialization" do
-    url "https://pypi.python.org/packages/source/o/oslo.serialization/oslo.serialization-1.5.0.tar.gz"
-    sha1 "41f4fd9a1c112f1c6ab9e2472132353f5856161d"
+    url "https://pypi.python.org/packages/source/o/oslo.serialization/oslo.serialization-1.6.0.tar.gz"
+    sha1 "be1b1776003f6fdb75b916faf605a221e6f1e014"
   end
 
   resource "oslo.utils" do
-    url "https://pypi.python.org/packages/source/o/oslo.utils/oslo.utils-1.5.0.tar.gz"
-    sha1 "16ef23d038ec560b36e395b5d5668b28f3645901"
+    url "https://pypi.python.org/packages/source/o/oslo.utils/oslo.utils-1.6.0.tar.gz"
+    sha1 "c438435787c3e007564894200281f337cb11029b"
   end
 
   resource "pbr" do
@@ -232,8 +237,8 @@ class Flocker041dev1 < Formula
   end
 
   resource "simplejson" do
-    url "https://pypi.python.org/packages/source/s/simplejson/simplejson-3.7.2.tar.gz"
-    sha1 "3bc8bb28a40c0a7a13c53ab2446163b88de06a49"
+    url "https://pypi.python.org/packages/source/s/simplejson/simplejson-3.7.3.tar.gz"
+    sha1 "ac62202f9101100d8a28cb19862fac68e008931d"
   end
 
   resource "six" do
@@ -242,8 +247,8 @@ class Flocker041dev1 < Formula
   end
 
   resource "stevedore" do
-    url "https://pypi.python.org/packages/source/s/stevedore/stevedore-1.4.0.tar.gz"
-    sha1 "4c00b6fb73346559cdbe96a0072e750cfe3861c2"
+    url "https://pypi.python.org/packages/source/s/stevedore/stevedore-1.5.0.tar.gz"
+    sha1 "1089a5e07e399c2ea89d71ffffab8fa7f74a2ac6"
   end
 
   resource "treq" do
@@ -257,13 +262,18 @@ class Flocker041dev1 < Formula
   end
 
   resource "websocket-client" do
-    url "https://pypi.python.org/packages/source/w/websocket-client/websocket_client-0.31.0.tar.gz"
-    sha1 "08c3b33e86cb161978dc421134f4fedca8594eb2"
+    url "https://pypi.python.org/packages/source/w/websocket-client/websocket_client-0.32.0.tar.gz"
+    sha1 "9df03f0e64167be9fabe113c99297a4a8774f4fb"
   end
 
   resource "Werkzeug" do
     url "https://pypi.python.org/packages/source/W/Werkzeug/Werkzeug-0.10.4.tar.gz"
     sha1 "bde8ef90a905ed52e0920493072d161a354a8fe1"
+  end
+
+  resource "wrapt" do
+    url "https://pypi.python.org/packages/source/w/wrapt/wrapt-1.10.4.tar.gz"
+    sha1 "8c16cd711c3cb0bebdf7592749a54879c85c629e"
   end
 
   resource "zope.interface" do
@@ -273,7 +283,7 @@ class Flocker041dev1 < Formula
 
   def install
     ENV.prepend_create_path "PYTHONPATH", "#{libexec}/vendor/lib/python2.7/site-packages"
-    %w[argparse Babel backports.ssl-match-hostname bitmath boto cffi characteristic cryptography docker-py effect eliot enum34 idna ipaddr ipaddress iso8601 jsonschema klein machinist msgpack-python netaddr netifaces oslo.config oslo.i18n oslo.serialization oslo.utils pbr pip prettytable psutil pyasn1 pyasn1-modules pycparser pycrypto pyOpenSSL pyrsistent python-cinderclient python-keystoneclient python-keystoneclient-rackspace python-novaclient pytz PyYAML requests service-identity setuptools simplejson six stevedore treq Twisted websocket-client Werkzeug zope.interface].each do |r|
+    %w[argparse Babel backports.ssl-match-hostname bitmath boto cffi characteristic cryptography debtcollector docker-py effect eliot enum34 idna ipaddr ipaddress iso8601 jsonschema klein machinist msgpack-python netaddr netifaces oslo.config oslo.i18n oslo.serialization oslo.utils pbr pip prettytable psutil pyasn1 pyasn1-modules pycparser pycrypto pyOpenSSL pyrsistent python-cinderclient python-keystoneclient python-keystoneclient-rackspace python-novaclient pytz PyYAML requests service-identity setuptools simplejson six stevedore treq Twisted websocket-client Werkzeug wrapt zope.interface].each do |r|
       resource(r).stage do
         system "python", *Language::Python.setup_install_args(libexec/"vendor")
       end
