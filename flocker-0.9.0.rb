@@ -1,9 +1,9 @@
 require "formula"
 
-class Flocker090pre1 < Formula
+class Flocker090 < Formula
   homepage "https://clusterhq.com"
-  url "https://clusterhq-archive.s3.amazonaws.com/python/Flocker-0.9.0pre1.tar.gz"
-  sha1 "117c7714e3bd182ff561f1d7cbdd176251c583ce"
+  url "https://clusterhq-archive.s3.amazonaws.com/python/Flocker-0.9.0.tar.gz"
+  sha1 "495cd781a14475bfcb5cb05d8fe4da08509281a1"
   depends_on :python if MacOS.version <= :snow_leopard
 
   resource "argparse" do
