@@ -1,9 +1,9 @@
 require "formula"
 
-class Flocker041dev6 < Formula
+class Flocker090pre1 < Formula
   homepage "https://clusterhq.com"
-  url "https://clusterhq-archive.s3.amazonaws.com/python/Flocker-0.4.1dev6.tar.gz"
-  sha1 "15999ac8abef1d99ea2a52a47cabe28f5e2a4256"
+  url "https://clusterhq-archive.s3.amazonaws.com/python/Flocker-0.9.0pre1.tar.gz"
+  sha1 "117c7714e3bd182ff561f1d7cbdd176251c583ce"
   depends_on :python if MacOS.version <= :snow_leopard
 
   resource "argparse" do
@@ -32,8 +32,8 @@ class Flocker041dev6 < Formula
   end
 
   resource "cffi" do
-    url "https://pypi.python.org/packages/source/c/cffi/cffi-1.1.1.tar.gz"
-    sha1 "8c4f4d1078d05c796c12fc6d8f8cea25aaff0148"
+    url "https://pypi.python.org/packages/source/c/cffi/cffi-1.1.2.tar.gz"
+    sha1 "6d6203bf7d390560ac50943da4a3d2c96ab29756"
   end
 
   resource "characteristic" do
@@ -122,8 +122,8 @@ class Flocker041dev6 < Formula
   end
 
   resource "oslo.config" do
-    url "https://pypi.python.org/packages/source/o/oslo.config/oslo.config-1.12.0.tar.gz"
-    sha1 "c9916a29c9329ca1020302627b6bf1b66efd02be"
+    url "https://pypi.python.org/packages/source/o/oslo.config/oslo.config-1.12.1.tar.gz"
+    sha1 "a4f119e7dd8ffc71cf279d66fad212974271dc6a"
   end
 
   resource "oslo.i18n" do
@@ -172,8 +172,8 @@ class Flocker041dev6 < Formula
   end
 
   resource "pycparser" do
-    url "https://pypi.python.org/packages/source/p/pycparser/pycparser-2.13.tar.gz"
-    sha1 "0f157011f4c208194a22b7a9ec1a92b5645c2882"
+    url "https://pypi.python.org/packages/source/p/pycparser/pycparser-2.14.tar.gz"
+    sha1 "922162bad4aa8503988035506c1c65bbf8690ba4"
   end
 
   resource "pycrypto" do
