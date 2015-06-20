@@ -3,7 +3,7 @@ require "formula"
 class Flocker101 < Formula
   homepage "https://clusterhq.com"
   url "https://clusterhq-archive.s3.amazonaws.com/python/Flocker-1.0.1.tar.gz"
-  sha1 "a02c655379902b2c49f7b6c13938843bc771ce40"
+  sha1 "0ffa0500c379d9608f4137c9ec3567aed1ef3920"
   depends_on :python if MacOS.version <= :snow_leopard
 
   resource "argparse" do
