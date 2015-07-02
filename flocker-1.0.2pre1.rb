@@ -1,9 +1,9 @@
 require "formula"
 
-class Flocker101 < Formula
+class Flocker102pre1 < Formula
   homepage "https://clusterhq.com"
-  url "https://clusterhq-archive.s3.amazonaws.com/python/Flocker-1.0.1.tar.gz"
-  sha1 "0ffa0500c379d9608f4137c9ec3567aed1ef3920"
+  url "https://clusterhq-archive.s3.amazonaws.com/python/Flocker-1.0.2pre1.tar.gz"
+  sha1 "37b61a7f5eba1cde272cc04f7183f000115dceb0"
   depends_on :python if MacOS.version <= :snow_leopard
 
   resource "argparse" do
@@ -271,6 +271,11 @@ class Flocker101 < Formula
     sha1 "bde8ef90a905ed52e0920493072d161a354a8fe1"
   end
 
+  resource "wheel" do
+    url "https://pypi.python.org/packages/source/w/wheel/wheel-0.24.0.tar.gz"
+    sha1 "c02262299489646af253067e8136c060a93572e3"
+  end
+
   resource "wrapt" do
     url "https://pypi.python.org/packages/source/w/wrapt/wrapt-1.10.4.tar.gz"
     sha1 "8c16cd711c3cb0bebdf7592749a54879c85c629e"
@@ -283,7 +288,7 @@ class Flocker101 < Formula
 
   def install
     ENV.prepend_create_path "PYTHONPATH", "#{libexec}/vendor/lib/python2.7/site-packages"
-    %w[argparse Babel backports.ssl-match-hostname bitmath boto cffi characteristic cryptography debtcollector docker-py effect eliot enum34 idna ipaddr ipaddress iso8601 jsonschema klein machinist msgpack-python netaddr netifaces oslo.config oslo.i18n oslo.serialization oslo.utils pbr pip prettytable psutil pyasn1 pyasn1-modules pycparser pycrypto pyOpenSSL pyrsistent python-cinderclient python-keystoneclient python-keystoneclient-rackspace python-novaclient pytz PyYAML requests service-identity setuptools simplejson six stevedore treq Twisted websocket-client Werkzeug wrapt zope.interface].each do |r|
+    %w[argparse Babel backports.ssl-match-hostname bitmath boto cffi characteristic cryptography debtcollector docker-py effect eliot enum34 idna ipaddr ipaddress iso8601 jsonschema klein machinist msgpack-python netaddr netifaces oslo.config oslo.i18n oslo.serialization oslo.utils pbr pip prettytable psutil pyasn1 pyasn1-modules pycparser pycrypto pyOpenSSL pyrsistent python-cinderclient python-keystoneclient python-keystoneclient-rackspace python-novaclient pytz PyYAML requests service-identity setuptools simplejson six stevedore treq Twisted websocket-client Werkzeug wheel wrapt zope.interface].each do |r|
       resource(r).stage do
         system "python", *Language::Python.setup_install_args(libexec/"vendor")
       end
