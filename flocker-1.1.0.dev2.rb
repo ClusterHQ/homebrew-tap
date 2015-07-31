@@ -1,19 +1,34 @@
 require "formula"
 
-class Flocker103 < Formula
+class Flocker110Dev2 < Formula
   homepage "https://clusterhq.com"
-  url "https://clusterhq-archive.s3.amazonaws.com/python/Flocker-1.0.3.tar.gz"
-  sha1 "96526edcdcb456e8a0208c8e74cad8dfbd47e5b7"
+  url "https://clusterhq-archive.s3.amazonaws.com/python/Flocker-1.1.0.dev2.tar.gz"
+  sha1 "a27c6109c25d1a85f68ccbb439cf76be778e6bfb"
   depends_on :python if MacOS.version <= :snow_leopard
-
-  resource "argparse" do
-    url "https://pypi.python.org/packages/source/a/argparse/argparse-1.3.0.tar.gz"
-    sha1 "8a8d6c9624669055c2c4f70adcb129139dc50ee6"
-  end
 
   resource "Babel" do
     url "https://pypi.python.org/packages/source/B/Babel/Babel-1.3.tar.gz"
     sha1 "7a43b1ee1539dca0baa37e9cb0706d1ba6631415"
+  end
+
+  resource "PyYAML" do
+    url "https://pypi.python.org/packages/source/P/PyYAML/PyYAML-3.10.tar.gz"
+    sha1 "476dcfbcc6f4ebf3c06186229e8e2bd7d7b20e73"
+  end
+
+  resource "Twisted" do
+    url "https://pypi.python.org/packages/source/T/Twisted/Twisted-15.1.0.tar.bz2"
+    sha1 "d41d60ff078c8cb9b063f1846a815cec98dc7693"
+  end
+
+  resource "Werkzeug" do
+    url "https://pypi.python.org/packages/source/W/Werkzeug/Werkzeug-0.10.4.tar.gz"
+    sha1 "bde8ef90a905ed52e0920493072d161a354a8fe1"
+  end
+
+  resource "argparse" do
+    url "https://pypi.python.org/packages/source/a/argparse/argparse-1.3.0.tar.gz"
+    sha1 "8a8d6c9624669055c2c4f70adcb129139dc50ee6"
   end
 
   resource "backports.ssl-match-hostname" do
@@ -52,8 +67,8 @@ class Flocker103 < Formula
   end
 
   resource "docker-py" do
-    url "https://pypi.python.org/packages/source/d/docker-py/docker-py-0.7.1.tar.gz"
-    sha1 "6ecb9353954061970764dde46994b3eb936cdd29"
+    url "https://pypi.python.org/packages/source/d/docker-py/docker-py-1.3.1.tar.gz"
+    sha1 "bff73a5a91a524dbc5ae422269be01496f291749"
   end
 
   resource "effect" do
@@ -147,8 +162,8 @@ class Flocker103 < Formula
   end
 
   resource "pip" do
-    url "https://pypi.python.org/packages/source/p/pip/pip-1.4.1.tar.gz"
-    sha1 "9766254c7909af6d04739b4a7732cc29e9a48cb0"
+    url "https://pypi.python.org/packages/source/p/pip/pip-7.1.0.tar.gz"
+    sha1 "f0254e9b58d29268125fdf08e4cac303592f26d6"
   end
 
   resource "prettytable" do
@@ -159,6 +174,11 @@ class Flocker103 < Formula
   resource "psutil" do
     url "https://pypi.python.org/packages/source/p/psutil/psutil-2.1.2.tar.gz"
     sha1 "ca69a2b6041250e9044bc5ee9436e20a8c869f49"
+  end
+
+  resource "pyOpenSSL" do
+    url "https://pypi.python.org/packages/source/p/pyOpenSSL/pyOpenSSL-0.15.1.tar.gz"
+    sha1 "e4d752de1fea5a40a982d4d55004cfb14109ba99"
   end
 
   resource "pyasn1" do
@@ -179,11 +199,6 @@ class Flocker103 < Formula
   resource "pycrypto" do
     url "https://pypi.python.org/packages/source/p/pycrypto/pycrypto-2.6.1.tar.gz"
     sha1 "aeda3ed41caf1766409d4efc689b9ca30ad6aeb2"
-  end
-
-  resource "pyOpenSSL" do
-    url "https://pypi.python.org/packages/source/p/pyOpenSSL/pyOpenSSL-0.15.1.tar.gz"
-    sha1 "e4d752de1fea5a40a982d4d55004cfb14109ba99"
   end
 
   resource "pyrsistent" do
@@ -216,14 +231,9 @@ class Flocker103 < Formula
     sha1 "84470b3586238c7cb51cd9b50a5b8734e19c4197"
   end
 
-  resource "PyYAML" do
-    url "https://pypi.python.org/packages/source/P/PyYAML/PyYAML-3.10.tar.gz"
-    sha1 "476dcfbcc6f4ebf3c06186229e8e2bd7d7b20e73"
-  end
-
   resource "requests" do
-    url "https://pypi.python.org/packages/source/r/requests/requests-2.4.3.tar.gz"
-    sha1 "411f1bfa44556f7dd0f34cd822047c31baa7d741"
+    url "https://pypi.python.org/packages/source/r/requests/requests-2.7.0.tar.gz"
+    sha1 "6db8805632521a13789161bccb14f761672ec46f"
   end
 
   resource "service-identity" do
@@ -232,8 +242,8 @@ class Flocker103 < Formula
   end
 
   resource "setuptools" do
-    url "https://pypi.python.org/packages/source/s/setuptools/setuptools-3.6.tar.gz"
-    sha1 "745cbb942f8015dbcbfd9df5cb815adb63c7b0e9"
+    url "https://pypi.python.org/packages/source/s/setuptools/setuptools-18.0.1.tar.gz"
+    sha1 "ebc4fe81b7f6d61d923d9519f589903824044f52"
   end
 
   resource "simplejson" do
@@ -256,19 +266,9 @@ class Flocker103 < Formula
     sha1 "fc19b107d0cd6660f797ec6f82c3a61d5e2a768a"
   end
 
-  resource "Twisted" do
-    url "https://pypi.python.org/packages/source/T/Twisted/Twisted-15.1.0.tar.bz2"
-    sha1 "d41d60ff078c8cb9b063f1846a815cec98dc7693"
-  end
-
   resource "websocket-client" do
     url "https://pypi.python.org/packages/source/w/websocket-client/websocket_client-0.32.0.tar.gz"
     sha1 "9df03f0e64167be9fabe113c99297a4a8774f4fb"
-  end
-
-  resource "Werkzeug" do
-    url "https://pypi.python.org/packages/source/W/Werkzeug/Werkzeug-0.10.4.tar.gz"
-    sha1 "bde8ef90a905ed52e0920493072d161a354a8fe1"
   end
 
   resource "wheel" do
@@ -288,7 +288,7 @@ class Flocker103 < Formula
 
   def install
     ENV.prepend_create_path "PYTHONPATH", "#{libexec}/vendor/lib/python2.7/site-packages"
-    %w[argparse Babel backports.ssl-match-hostname bitmath boto cffi characteristic cryptography debtcollector docker-py effect eliot enum34 idna ipaddr ipaddress iso8601 jsonschema klein machinist msgpack-python netaddr netifaces oslo.config oslo.i18n oslo.serialization oslo.utils pbr pip prettytable psutil pyasn1 pyasn1-modules pycparser pycrypto pyOpenSSL pyrsistent python-cinderclient python-keystoneclient python-keystoneclient-rackspace python-novaclient pytz PyYAML requests service-identity setuptools simplejson six stevedore treq Twisted websocket-client Werkzeug wheel wrapt zope.interface].each do |r|
+    %w[Babel PyYAML Twisted Werkzeug argparse backports.ssl-match-hostname bitmath boto cffi characteristic cryptography debtcollector docker-py effect eliot enum34 idna ipaddr ipaddress iso8601 jsonschema klein machinist msgpack-python netaddr netifaces oslo.config oslo.i18n oslo.serialization oslo.utils pbr pip prettytable psutil pyOpenSSL pyasn1 pyasn1-modules pycparser pycrypto pyrsistent python-cinderclient python-keystoneclient python-keystoneclient-rackspace python-novaclient pytz requests service-identity setuptools simplejson six stevedore treq websocket-client wheel wrapt zope.interface].each do |r|
       resource(r).stage do
         system "python", *Language::Python.setup_install_args(libexec/"vendor")
       end
