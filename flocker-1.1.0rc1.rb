@@ -1,9 +1,9 @@
 require "formula"
 
-class Flocker110Dev2 < Formula
+class Flocker110rc1 < Formula
   homepage "https://clusterhq.com"
-  url "https://clusterhq-archive.s3.amazonaws.com/python/Flocker-1.1.0.dev2.tar.gz"
-  sha1 "a27c6109c25d1a85f68ccbb439cf76be778e6bfb"
+  url "https://clusterhq-archive.s3.amazonaws.com/python/Flocker-1.1.0rc1.tar.gz"
+  sha1 "0b1a60e74b4774fb5d5a25166219edd656c6e092"
   depends_on :python if MacOS.version <= :snow_leopard
 
   resource "Babel" do
@@ -202,8 +202,8 @@ class Flocker110Dev2 < Formula
   end
 
   resource "pyrsistent" do
-    url "https://pypi.python.org/packages/source/p/pyrsistent/pyrsistent-0.9.2.tar.gz"
-    sha1 "7df34812c48cbf711dba0d9069f6f10dd2db15e1"
+    url "https://pypi.python.org/packages/source/p/pyrsistent/pyrsistent-0.10.3.tar.gz"
+    sha1 "b6df9ec5fb5cf2cabeb3c343ed5f708fcfbef85c"
   end
 
   resource "python-cinderclient" do
