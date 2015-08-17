@@ -1,9 +1,9 @@
 require "formula"
 
-class Flocker110 < Formula
+class Flocker120Dev1 < Formula
   homepage "https://clusterhq.com"
-  url "https://clusterhq-archive.s3.amazonaws.com/python/Flocker-1.1.0.tar.gz"
-  sha1 "d17292d4c394fef594f22e16bde57d2b08763ef5"
+  url "https://clusterhq-archive.s3.amazonaws.com/python/Flocker-1.2.0.dev1.tar.gz"
+  sha1 "db81774592f4d930e6327aa019e57d4245050145"
   depends_on :python if MacOS.version <= :snow_leopard
 
   resource "Babel" do
@@ -77,8 +77,8 @@ class Flocker110 < Formula
   end
 
   resource "eliot" do
-    url "https://pypi.python.org/packages/source/e/eliot/eliot-0.7.1.tar.gz"
-    sha1 "70a9775b71ce253791fb146ab02c52e62e14d4af"
+    url "https://pypi.python.org/packages/source/e/eliot/eliot-0.8.0.tar.gz"
+    sha1 "dab876a83efee73c2090d75c7891af2fb4964c0e"
   end
 
   resource "enum34" do
