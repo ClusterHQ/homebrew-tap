@@ -1,9 +1,9 @@
 require "formula"
 
-class Flocker120Dev1 < Formula
+class Flocker120 < Formula
   homepage "https://clusterhq.com"
-  url "https://clusterhq-archive.s3.amazonaws.com/python/Flocker-1.2.0.dev1.tar.gz"
-  sha1 "db81774592f4d930e6327aa019e57d4245050145"
+  url "https://clusterhq-archive.s3.amazonaws.com/python/Flocker-1.2.0.tar.gz"
+  sha1 "91c5a76552528a8f3d671b55c3609acf3e2dccc2"
   depends_on :python if MacOS.version <= :snow_leopard
 
   resource "Babel" do
