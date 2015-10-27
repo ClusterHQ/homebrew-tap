@@ -1,10 +1,11 @@
 require "formula"
 
-class Flocker140 < Formula
+class Flocker150 < Formula
   homepage "https://clusterhq.com"
-  url "https://clusterhq-archive.s3.amazonaws.com/python/Flocker-1.4.0.tar.gz"
-  sha1 "8c3db57463cdf44911eb7baac45496d5a57d7e5c"
+  url "https://clusterhq-archive.s3.amazonaws.com/python/Flocker-1.5.0.tar.gz"
+  sha1 "726af3515c77f938572d2886d2f8438f28014694"
   depends_on :python if MacOS.version <= :snow_leopard
+  depends_on "openssl"
 
   resource "Babel" do
     url "https://pypi.python.org/packages/source/B/Babel/Babel-1.3.tar.gz"
@@ -77,8 +78,13 @@ class Flocker140 < Formula
   end
 
   resource "eliot" do
-    url "https://pypi.python.org/packages/source/e/eliot/eliot-0.8.0.tar.gz"
-    sha1 "dab876a83efee73c2090d75c7891af2fb4964c0e"
+    url "https://pypi.python.org/packages/source/e/eliot/eliot-0.9.0.tar.gz"
+    sha1 "03ad771019d0432eccee35d1de1b6d75a06ea1fe"
+  end
+
+  resource "eliot-tree" do
+    url "https://pypi.python.org/packages/source/e/eliot-tree/eliot-tree-15.3.0.tar.gz"
+    sha1 "d780a2147fab8ab4ef45045da393fa1d87a019c5"
   end
 
   resource "enum34" do
@@ -104,6 +110,11 @@ class Flocker140 < Formula
   resource "iso8601" do
     url "https://pypi.python.org/packages/source/i/iso8601/iso8601-0.1.10.tar.gz"
     sha1 "523f48ec579c49c0c1496c094282b684e07d4b36"
+  end
+
+  resource "jmespath" do
+    url "https://pypi.python.org/packages/source/j/jmespath/jmespath-0.9.0.tar.gz"
+    sha1 "642800c1bc901a440639d5743c9cd74ba59c2d4a"
   end
 
   resource "jsonschema" do
@@ -202,8 +213,8 @@ class Flocker140 < Formula
   end
 
   resource "pyrsistent" do
-    url "https://pypi.python.org/packages/source/p/pyrsistent/pyrsistent-0.10.3.tar.gz"
-    sha1 "b6df9ec5fb5cf2cabeb3c343ed5f708fcfbef85c"
+    url "https://pypi.python.org/packages/source/p/pyrsistent/pyrsistent-0.11.7.tar.gz"
+    sha1 "fe5ff19f513a9cf8ea02344331abc7528bef6bc0"
   end
 
   resource "python-cinderclient" do
@@ -229,6 +240,11 @@ class Flocker140 < Formula
   resource "pytz" do
     url "https://pypi.python.org/packages/source/p/pytz/pytz-2015.4.tar.bz2"
     sha1 "84470b3586238c7cb51cd9b50a5b8734e19c4197"
+  end
+
+  resource "repoze.lru" do
+    url "https://pypi.python.org/packages/source/r/repoze.lru/repoze.lru-0.6.tar.gz"
+    sha1 "e7cfb2ca9e9dcbf237844f9e6233903a38ce6d09"
   end
 
   resource "requests" do
@@ -261,6 +277,11 @@ class Flocker140 < Formula
     sha1 "1089a5e07e399c2ea89d71ffffab8fa7f74a2ac6"
   end
 
+  resource "toolz" do
+    url "https://pypi.python.org/packages/source/t/toolz/toolz-0.7.4.tar.gz"
+    sha1 "2d4ed38740eec29928f7756162e45f1e0b0fc547"
+  end
+
   resource "treq" do
     url "https://pypi.python.org/packages/source/t/treq/treq-0.2.1.tar.gz"
     sha1 "fc19b107d0cd6660f797ec6f82c3a61d5e2a768a"
@@ -287,8 +308,14 @@ class Flocker140 < Formula
   end
 
   def install
+    # XXX These environment variables are necessary until cryptography has
+    # wheels for OS X 10.11.
+    # See https://github.com/pyca/cryptography/issues/2350
+    ENV["LDFLAGS"] = "-L#{opt_prefix}/openssl/lib"
+    ENV["CFLAGS"] = "-I#{opt_prefix}/openssl/include"
+
     ENV.prepend_create_path "PYTHONPATH", "#{libexec}/vendor/lib/python2.7/site-packages"
-    %w[Babel PyYAML Twisted Werkzeug argparse backports.ssl-match-hostname bitmath boto cffi characteristic cryptography debtcollector docker-py effect eliot enum34 idna ipaddr ipaddress iso8601 jsonschema klein machinist msgpack-python netaddr netifaces oslo.config oslo.i18n oslo.serialization oslo.utils pbr pip prettytable psutil pyOpenSSL pyasn1 pyasn1-modules pycparser pycrypto pyrsistent python-cinderclient python-keystoneclient python-keystoneclient-rackspace python-novaclient pytz requests service-identity setuptools simplejson six stevedore treq websocket-client wheel wrapt zope.interface].each do |r|
+    %w[Babel PyYAML Twisted Werkzeug argparse backports.ssl-match-hostname bitmath boto cffi characteristic cryptography debtcollector docker-py effect eliot eliot-tree enum34 idna ipaddr ipaddress iso8601 jmespath jsonschema klein machinist msgpack-python netaddr netifaces oslo.config oslo.i18n oslo.serialization oslo.utils pbr pip prettytable psutil pyOpenSSL pyasn1 pyasn1-modules pycparser pycrypto pyrsistent python-cinderclient python-keystoneclient python-keystoneclient-rackspace python-novaclient pytz repoze.lru requests service-identity setuptools simplejson six stevedore toolz treq websocket-client wheel wrapt zope.interface].each do |r|
       resource(r).stage do
         system "python", *Language::Python.setup_install_args(libexec/"vendor")
       end
