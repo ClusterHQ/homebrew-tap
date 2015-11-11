@@ -1,9 +1,9 @@
 require "formula"
 
-class Flocker161 < Formula
+class Flocker170 < Formula
   homepage "https://clusterhq.com"
-  url "https://clusterhq-archive.s3.amazonaws.com/python/Flocker-1.6.1.tar.gz"
-  sha1 "03f584570f98589a825a1dc7341d406be35d04bb"
+  url "https://clusterhq-archive.s3.amazonaws.com/python/Flocker-1.7.0.tar.gz"
+  sha1 "bfd8440fb7ee82dc67168280e417f25bba6419fa"
   depends_on :python if MacOS.version <= :snow_leopard
   depends_on "openssl"
 
@@ -68,8 +68,8 @@ class Flocker161 < Formula
   end
 
   resource "docker-py" do
-    url "https://pypi.python.org/packages/source/d/docker-py/docker-py-1.3.1.tar.gz"
-    sha1 "bff73a5a91a524dbc5ae422269be01496f291749"
+    url "https://pypi.python.org/packages/source/d/docker-py/docker-py-1.5.0.tar.gz"
+    sha1 "7361340e76f08ab6b9f6ab33c67fbe9f45dbeef4"
   end
 
   resource "effect" do
