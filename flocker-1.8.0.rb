@@ -1,9 +1,9 @@
 require "formula"
 
-class Flocker172 < Formula
+class Flocker180 < Formula
   homepage "https://clusterhq.com"
-  url "https://clusterhq-archive.s3.amazonaws.com/python/Flocker-1.7.2.tar.gz"
-  sha1 "645d292107090edcec64636da90b446272b8eec6"
+  url "https://clusterhq-archive.s3.amazonaws.com/python/Flocker-1.8.0.tar.gz"
+  sha1 "589545b62fac41a02e3e2e52328f342b0d2ebcba"
   depends_on :python if MacOS.version <= :snow_leopard
   depends_on "openssl"
 
@@ -30,6 +30,11 @@ class Flocker172 < Formula
   resource "argparse" do
     url "https://pypi.python.org/packages/source/a/argparse/argparse-1.3.0.tar.gz"
     sha1 "8a8d6c9624669055c2c4f70adcb129139dc50ee6"
+  end
+
+  resource "attrs" do
+    url "https://pypi.python.org/packages/source/a/attrs/attrs-15.1.0.tar.gz"
+    sha1 "b9c8b5053fa6bb81e067ed630d54566c9bd04ea3"
   end
 
   resource "backports.ssl-match-hostname" do
@@ -73,8 +78,8 @@ class Flocker172 < Formula
   end
 
   resource "effect" do
-    url "https://pypi.python.org/packages/source/e/effect/effect-0.1a13.tar.gz"
-    sha1 "8edb977cbcd18bf0998adae30c5225e0df78a9ac"
+    url "https://pypi.python.org/packages/source/e/effect/effect-0.10.tar.gz"
+    sha1 "9d7d39fc1493728e971a330117111adf85695e27"
   end
 
   resource "eliot" do
@@ -287,6 +292,11 @@ class Flocker172 < Formula
     sha1 "fc19b107d0cd6660f797ec6f82c3a61d5e2a768a"
   end
 
+  resource "txeffect" do
+    url "https://pypi.python.org/packages/source/t/txeffect/txeffect-0.9.tar.gz"
+    sha1 "ee3393db15334994174455eac74c258fee118129"
+  end
+
   resource "websocket-client" do
     url "https://pypi.python.org/packages/source/w/websocket-client/websocket_client-0.32.0.tar.gz"
     sha1 "9df03f0e64167be9fabe113c99297a4a8774f4fb"
@@ -315,7 +325,7 @@ class Flocker172 < Formula
     ENV["CFLAGS"] = "-I#{opt_prefix}/openssl/include"
 
     ENV.prepend_create_path "PYTHONPATH", "#{libexec}/vendor/lib/python2.7/site-packages"
-    %w[Babel PyYAML Twisted Werkzeug argparse backports.ssl-match-hostname bitmath boto cffi characteristic cryptography debtcollector docker-py effect eliot eliot-tree enum34 idna ipaddr ipaddress iso8601 jmespath jsonschema klein machinist msgpack-python netaddr netifaces oslo.config oslo.i18n oslo.serialization oslo.utils pbr pip prettytable psutil pyOpenSSL pyasn1 pyasn1-modules pycparser pycrypto pyrsistent python-cinderclient python-keystoneclient python-keystoneclient-rackspace python-novaclient pytz repoze.lru requests service-identity setuptools simplejson six stevedore toolz treq websocket-client wheel wrapt zope.interface].each do |r|
+    %w[Babel PyYAML Twisted Werkzeug argparse attrs backports.ssl-match-hostname bitmath boto cffi characteristic cryptography debtcollector docker-py effect eliot eliot-tree enum34 idna ipaddr ipaddress iso8601 jmespath jsonschema klein machinist msgpack-python netaddr netifaces oslo.config oslo.i18n oslo.serialization oslo.utils pbr pip prettytable psutil pyOpenSSL pyasn1 pyasn1-modules pycparser pycrypto pyrsistent python-cinderclient python-keystoneclient python-keystoneclient-rackspace python-novaclient pytz repoze.lru requests service-identity setuptools simplejson six stevedore toolz treq txeffect websocket-client wheel wrapt zope.interface].each do |r|
       resource(r).stage do
         system "python", *Language::Python.setup_install_args(libexec/"vendor")
       end
