@@ -173,8 +173,8 @@ class Flocker180 < Formula
   end
 
   resource "pbr" do
-    url "https://pypi.python.org/packages/source/p/pbr/pbr-0.11.0.tar.gz"
-    sha1 "72801e9ffd52e7f438422a3e08b578e906cd270a"
+    url "https://pypi.python.org/packages/source/p/pbr/pbr-0.11.1.tar.gz"
+    sha1 "d1e3431855f0dbec536b6629f7bbe189124493c9"
   end
 
   resource "pip" do
