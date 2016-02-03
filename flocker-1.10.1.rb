@@ -1,9 +1,9 @@
 require "formula"
 
-class Flocker190 < Formula
+class Flocker1101 < Formula
   homepage "https://clusterhq.com"
-  url "https://clusterhq-archive.s3.amazonaws.com/python/Flocker-1.9.0.tar.gz"
-  sha1 "a03ba88dfb4e1a1d1930fe6ac8a9e15e788b2faf"
+  url "https://clusterhq-archive.s3.amazonaws.com/python/Flocker-1.10.1.tar.gz"
+  sha1 "3fdbff6dc423d5c6eeb21f0cc89f79bf265c05c1"
   depends_on :python if MacOS.version <= :snow_leopard
   depends_on "openssl"
 
@@ -58,8 +58,8 @@ class Flocker190 < Formula
   end
 
   resource "botocore" do
-    url "https://pypi.python.org/packages/source/b/botocore/botocore-1.3.9.tar.gz"
-    sha1 "7bcf7162cab7a940da22397a39593bdc53aca5ba"
+    url "https://pypi.python.org/packages/source/b/botocore/botocore-1.3.17.tar.gz"
+    sha1 "ddf8c9ffe776c8dc84a5b695def24738162619c7"
   end
 
   resource "cffi" do
@@ -87,6 +87,11 @@ class Flocker190 < Formula
     sha1 "71b4281dc26131fb125c075cc49afcab6564a6bc"
   end
 
+  resource "docutils" do
+    url "https://pypi.python.org/packages/source/d/docutils/docutils-0.12.tar.gz"
+    sha1 "002450621b33c5690060345b0aac25bc2426d675"
+  end
+
   resource "effect" do
     url "https://pypi.python.org/packages/source/e/effect/effect-0.10.tar.gz"
     sha1 "9d7d39fc1493728e971a330117111adf85695e27"
@@ -110,6 +115,16 @@ class Flocker190 < Formula
   resource "futures" do
     url "https://pypi.python.org/packages/source/f/futures/futures-2.2.0.tar.gz"
     sha1 "0302253fb7e4fbbc48000b3e3dde244e9e7cd353"
+  end
+
+  resource "google-api-python-client" do
+    url "https://pypi.python.org/packages/source/g/google-api-python-client/google-api-python-client-1.4.2.tar.gz"
+    sha1 "0e213794dbed8406d1e57e32473806e36e896000"
+  end
+
+  resource "httplib2" do
+    url "https://pypi.python.org/packages/source/h/httplib2/httplib2-0.9.2.tar.gz"
+    sha1 "30746d5512c2f1cf1979e0c92438c17e4d80ce47"
   end
 
   resource "hypothesis" do
@@ -177,6 +192,11 @@ class Flocker190 < Formula
     sha1 "c3fcd491a89c2994815053e853b005e7fc27c79a"
   end
 
+  resource "oauth2client" do
+    url "https://pypi.python.org/packages/source/o/oauth2client/oauth2client-1.5.2.tar.gz"
+    sha1 "18e2356be4234bce2c191495ee2c96f2eafaf7bb"
+  end
+
   resource "oslo.config" do
     url "https://pypi.python.org/packages/source/o/oslo.config/oslo.config-1.12.1.tar.gz"
     sha1 "a4f119e7dd8ffc71cf279d66fad212974271dc6a"
@@ -198,8 +218,8 @@ class Flocker190 < Formula
   end
 
   resource "pbr" do
-    url "https://pypi.python.org/packages/source/p/pbr/pbr-0.11.0.tar.gz"
-    sha1 "72801e9ffd52e7f438422a3e08b578e906cd270a"
+    url "https://pypi.python.org/packages/source/p/pbr/pbr-0.11.1.tar.gz"
+    sha1 "bbb65f8504e6c16517d7f6a1a745959299e23716"
   end
 
   resource "pip" do
@@ -252,6 +272,11 @@ class Flocker190 < Formula
     sha1 "4c74f4f5f6827e4fe53c19986a570e462445a87b"
   end
 
+  resource "python-dateutil" do
+    url "https://pypi.python.org/packages/source/p/python-dateutil/python-dateutil-2.4.2.tar.gz"
+    sha1 "1d975f5db65306a61f4353ef00308ec806f47f54"
+  end
+
   resource "python-keystoneclient" do
     url "https://pypi.python.org/packages/source/p/python-keystoneclient/python-keystoneclient-1.4.0.tar.gz"
     sha1 "cbaf309ab27f1f7d211c9dfdd85f80e7d234e4b4"
@@ -280,6 +305,11 @@ class Flocker190 < Formula
   resource "requests" do
     url "https://pypi.python.org/packages/source/r/requests/requests-2.7.0.tar.gz"
     sha1 "6db8805632521a13789161bccb14f761672ec46f"
+  end
+
+  resource "rsa" do
+    url "https://pypi.python.org/packages/source/r/rsa/rsa-3.3.tar.gz"
+    sha1 "994526e3ed87cffbe65036c4e3f7b904950053c7"
   end
 
   resource "service-identity" do
@@ -322,6 +352,11 @@ class Flocker190 < Formula
     sha1 "ee3393db15334994174455eac74c258fee118129"
   end
 
+  resource "uritemplate" do
+    url "https://pypi.python.org/packages/source/u/uritemplate/uritemplate-0.6.tar.gz"
+    sha1 "55b15d6f97be32f66af556acce3685e5248b22a8"
+  end
+
   resource "websocket-client" do
     url "https://pypi.python.org/packages/source/w/websocket-client/websocket_client-0.32.0.tar.gz"
     sha1 "9df03f0e64167be9fabe113c99297a4a8774f4fb"
@@ -350,7 +385,7 @@ class Flocker190 < Formula
     ENV["CFLAGS"] = "-I#{opt_prefix}/openssl/include"
 
     ENV.prepend_create_path "PYTHONPATH", "#{libexec}/vendor/lib/python2.7/site-packages"
-    %w[Babel PyYAML Twisted Werkzeug argparse attrs backports.ssl-match-hostname bitmath boto boto3 botocore cffi characteristic cryptography debtcollector docker-py effect eliot eliot-tree enum34 futures hypothesis idna ipaddr ipaddress iso8601 jmespath jsonschema klein machinist msgpack-python ndg-httpsclient netaddr netifaces oslo.config oslo.i18n oslo.serialization oslo.utils pbr pip prettytable psutil pyOpenSSL pyasn1 pyasn1-modules pycparser pycrypto pyrsistent python-cinderclient python-keystoneclient python-keystoneclient-rackspace python-novaclient pytz repoze.lru requests service-identity setuptools simplejson six stevedore toolz treq txeffect websocket-client wheel wrapt zope.interface].each do |r|
+    %w[Babel PyYAML Twisted Werkzeug argparse attrs backports.ssl-match-hostname bitmath boto boto3 botocore cffi characteristic cryptography debtcollector docker-py docutils effect eliot eliot-tree enum34 futures google-api-python-client httplib2 hypothesis idna ipaddr ipaddress iso8601 jmespath jsonschema klein machinist msgpack-python ndg-httpsclient netaddr netifaces oauth2client oslo.config oslo.i18n oslo.serialization oslo.utils pbr pip prettytable psutil pyOpenSSL pyasn1 pyasn1-modules pycparser pycrypto pyrsistent python-cinderclient python-dateutil python-keystoneclient python-keystoneclient-rackspace python-novaclient pytz repoze.lru requests rsa service-identity setuptools simplejson six stevedore toolz treq txeffect uritemplate websocket-client wheel wrapt zope.interface].each do |r|
       resource(r).stage do
         system "python", *Language::Python.setup_install_args(libexec/"vendor")
       end
