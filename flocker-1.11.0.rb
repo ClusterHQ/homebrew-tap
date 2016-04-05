@@ -1,9 +1,9 @@
 require "formula"
 
-class Flocker1103Dev2 < Formula
+class Flocker1110 < Formula
   homepage "https://clusterhq.com"
-  url "https://clusterhq-archive.s3.amazonaws.com/python/Flocker-1.10.3.dev2.tar.gz"
-  sha1 "e543ad4a61069e472bff4b80f427a4e95abf2b37"
+  url "https://clusterhq-archive.s3.amazonaws.com/python/Flocker-1.11.0.tar.gz"
+  sha1 "1115419c0495f2984c5c4d34120efca555e79ede"
   depends_on :python if MacOS.version <= :snow_leopard
   depends_on "openssl"
 
@@ -63,8 +63,8 @@ class Flocker1103Dev2 < Formula
   end
 
   resource "cffi" do
-    url "https://pypi.python.org/packages/source/c/cffi/cffi-1.1.2.tar.gz"
-    sha1 "6d6203bf7d390560ac50943da4a3d2c96ab29756"
+    url "https://pypi.python.org/packages/source/c/cffi/cffi-1.5.2.tar.gz"
+    sha1 "5239b3aa4f67eed3559c09778096ecd4faeca876"
   end
 
   resource "characteristic" do
@@ -73,8 +73,8 @@ class Flocker1103Dev2 < Formula
   end
 
   resource "cryptography" do
-    url "https://pypi.python.org/packages/source/c/cryptography/cryptography-1.1.2.tar.gz"
-    sha1 "7ce01ed984c580ed0d967ca6623f274d806e3fd1"
+    url "https://pypi.python.org/packages/source/c/cryptography/cryptography-1.2.3.tar.gz"
+    sha1 "a8a8083e70875423bd72899ca99890b788189205"
   end
 
   resource "debtcollector" do
@@ -263,8 +263,8 @@ class Flocker1103Dev2 < Formula
   end
 
   resource "pyrsistent" do
-    url "https://pypi.python.org/packages/source/p/pyrsistent/pyrsistent-0.11.9.tar.gz"
-    sha1 "ff4f8524422d30588f1fba73d88eaebfc120d90d"
+    url "https://pypi.python.org/packages/source/p/pyrsistent/pyrsistent-0.11.12.tar.gz"
+    sha1 "3880b17b9aa7187f88a8d2523a5786a5e6a2bbcd"
   end
 
   resource "python-cinderclient" do
