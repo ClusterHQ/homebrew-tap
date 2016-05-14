@@ -87,6 +87,11 @@ class Flocker190 < Formula
     sha1 "71b4281dc26131fb125c075cc49afcab6564a6bc"
   end
 
+  resource "docutils" do
+    url "https://pypi.python.org/packages/source/d/docutils/docutils-0.12.tar.gz"
+    sha1 "002450621b33c5690060345b0aac25bc2426d675"
+  end
+
   resource "effect" do
     url "https://pypi.python.org/packages/source/e/effect/effect-0.10.tar.gz"
     sha1 "9d7d39fc1493728e971a330117111adf85695e27"
@@ -252,6 +257,11 @@ class Flocker190 < Formula
     sha1 "4c74f4f5f6827e4fe53c19986a570e462445a87b"
   end
 
+  resource "python-dateutil" do
+    url "https://pypi.python.org/packages/source/p/python-dateutil/python-dateutil-2.4.2.tar.gz"
+    sha1 "1d975f5db65306a61f4353ef00308ec806f47f54"
+  end
+
   resource "python-keystoneclient" do
     url "https://pypi.python.org/packages/source/p/python-keystoneclient/python-keystoneclient-1.4.0.tar.gz"
     sha1 "cbaf309ab27f1f7d211c9dfdd85f80e7d234e4b4"
@@ -350,7 +360,7 @@ class Flocker190 < Formula
     ENV["CFLAGS"] = "-I#{opt_prefix}/openssl/include"
 
     ENV.prepend_create_path "PYTHONPATH", "#{libexec}/vendor/lib/python2.7/site-packages"
-    %w[Babel PyYAML Twisted Werkzeug argparse attrs backports.ssl-match-hostname bitmath boto boto3 botocore cffi characteristic cryptography debtcollector docker-py effect eliot eliot-tree enum34 futures hypothesis idna ipaddr ipaddress iso8601 jmespath jsonschema klein machinist msgpack-python ndg-httpsclient netaddr netifaces oslo.config oslo.i18n oslo.serialization oslo.utils pbr pip prettytable psutil pyOpenSSL pyasn1 pyasn1-modules pycparser pycrypto pyrsistent python-cinderclient python-keystoneclient python-keystoneclient-rackspace python-novaclient pytz repoze.lru requests service-identity setuptools simplejson six stevedore toolz treq txeffect websocket-client wheel wrapt zope.interface].each do |r|
+    %w[Babel PyYAML Twisted Werkzeug argparse attrs backports.ssl-match-hostname bitmath boto boto3 botocore cffi characteristic cryptography debtcollector docutils docker-py effect eliot eliot-tree enum34 futures hypothesis idna ipaddr ipaddress iso8601 jmespath jsonschema klein machinist msgpack-python ndg-httpsclient netaddr netifaces oslo.config oslo.i18n oslo.serialization oslo.utils pbr pip prettytable psutil pyOpenSSL pyasn1 pyasn1-modules pycparser pycrypto pyrsistent python-cinderclient python-dateutil python-keystoneclient python-keystoneclient-rackspace python-novaclient pytz repoze.lru requests service-identity setuptools simplejson six stevedore toolz treq txeffect websocket-client wheel wrapt zope.interface].each do |r|
       resource(r).stage do
         system "python", *Language::Python.setup_install_args(libexec/"vendor")
       end
